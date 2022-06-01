@@ -1,7 +1,7 @@
-package leetcode;
+package challenge.problems;
 
 public class ContainerWithMostWater {
-    public static void main(String[] args) {
+    public static void main() {
         System.out.println("The Maximal Area Container:: ");
         System.out.println(maxArea(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7}));
     }

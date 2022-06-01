@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class TargetSubset {
-
     public static void main() {
         Scanner scanner = new Scanner(System.in);
 
@@ -18,9 +17,7 @@ public class TargetSubset {
         String setString = scanner.next();
         System.out.print("\n");
 
-        /* parse input */
-        String[] splitSet = setString.split(",");
-        Long[] set = Arrays.stream(splitSet).map(Long::parseLong).toArray(Long[]::new);
+        Long[] set = parseSet(setString);
 
         /* run recursive algorithm */
         SubsetState solution = (new TargetSubset()).recurse(set, target);
@@ -30,6 +27,11 @@ public class TargetSubset {
         System.out.println("Base Set:: " + Arrays.toString(set));
         System.out.println("Target:: " + target);
         System.out.println("Solution:: " + solution);
+    }
+
+    /* parse input string into array of longs */
+    public static Long[] parseSet(String setString) {
+        return Arrays.stream(setString.split(",")).map(Long::parseLong).toArray(Long[]::new);
     }
 
     /* wrapper for recursive algorithm */
@@ -102,7 +104,7 @@ class SubsetState {
     }
 
     /* returns the solution set as a string*/
-    public String toString(){
+    public String toString() {
         return subset.toString();
     }
 }

@@ -35,6 +35,6 @@ run {
 }
 
 tasks.named('test') {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
+    // Use JUnit for unit tests.
+    useJUnit()
 }

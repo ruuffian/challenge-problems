@@ -7,12 +7,13 @@ You may assume that each input would have exactly one solution, and you may not 
 
 You can return the answer in any order.
  */
+
 import java.util.Arrays;
 import java.util.HashMap;
 
 public class TwoSum {
 
-    public static void main(String[] args) {
+    public static void main() {
         System.out.println(Arrays.toString(twoSum(new int[]{3, 2, 4}, 6)));
     }
 

@@ -1,13 +1,15 @@
-package leetcode;
+package challenge.problems;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Stack;
 
 public class ValidParentheses {
-    public static void main(String[] args) {
-        boolean value = isValid("]");
-        System.out.println(value);
+    public static void main() {
+        System.out.println(isValid("(({({})}))"));
+        System.out.println(isValid("("));
+        System.out.println(isValid(")"));
+        System.out.println(isValid("(}"));
     }
 
     public static boolean isValid(String s) {

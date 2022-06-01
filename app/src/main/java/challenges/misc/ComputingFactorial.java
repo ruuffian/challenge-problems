@@ -1,7 +1,7 @@
 package challenges.misc;
 
 public class ComputingFactorial {
-    public static void main(String[] args){
+    public static void main(){
         double BASEVAL = 170;
         long before1 = System.currentTimeMillis();
         System.out.println((new ComputingFactorial().iterativeFactorial(BASEVAL)));

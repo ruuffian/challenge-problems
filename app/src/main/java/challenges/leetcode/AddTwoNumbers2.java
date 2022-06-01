@@ -4,7 +4,7 @@ public class AddTwoNumbers2 {
     public static void main() {
         ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3, null)));
         ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4, null)));
-        System.out.println(new AddTwoNumbers2().addTwoNumbers(l1, l2));
+        System.out.println(new AddTwoNumbers2().addTwoNumbers(l1, l2).toString());
     }
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -59,6 +59,21 @@ public class AddTwoNumbers2 {
         ListNode(int val, ListNode next) {
             this.val = val;
             this.next = next;
+        }
+
+        public String toString() {
+            StringBuilder builder = new StringBuilder();
+            if (this.next != null)
+                builder = this.next.toString(builder);
+            builder.append(this.val);
+            return builder.deleteCharAt(0).reverse().toString();
+        }
+
+        public StringBuilder toString(StringBuilder builder) {
+            if (this.next != null) {
+                builder = this.next.toString(builder);
+            }
+            return builder.append(this.val);
         }
     }
 }

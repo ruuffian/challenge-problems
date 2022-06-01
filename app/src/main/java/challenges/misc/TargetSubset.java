@@ -1,5 +1,6 @@
 package challenges.misc;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,12 +8,12 @@ import java.util.Scanner;
 
 public class TargetSubset {
     public static void main() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
 
         /* problem variables */
         System.out.print("Target:: ");
         long target = Long.parseLong(scanner.next());
-        System.out.print("\n");
+//        System.out.print("\n");
         System.out.print("Set:: ");
         String setString = scanner.next();
         System.out.print("\n");
@@ -47,7 +48,9 @@ public class TargetSubset {
 
     public SubsetState recurse(SubsetState state, long element) {
         /* when target = 0, the current subset is a solution */
-        if (state.target <= 0) {
+        if (state.target < 0) {
+            return state;
+        } else if(state.target == 0){
             return state;
         }
 
@@ -73,38 +76,45 @@ public class TargetSubset {
         /* this is reached when a solution does not exist */
         return state;
     }
+    /* object used to keep track of various algorithm values */
+    static class SubsetState {
+        /* main set that is being chosen from */
+        Long[] set;
+        /* target, changes as algorithm progresses */
+        long target;
+        /* current solution set, as a list */
+        ArrayList<Long> subset;
+        /* all solutions found */
+//        ArrayList<ArrayList<Long>> solutions;
+
+        /* initialize a new state */
+        public SubsetState(Long[] set, long target, ArrayList<Long> subset) {
+            this.set = set;
+            this.target = target;
+            this.subset = subset;
+        }
+
+        /* add the element to the solution set and subtract it from the target */
+        public void addToSolution(long element) {
+            this.subset.add(element);
+            this.target -= element;
+        }
+
+        /* remove the element from the solution set and add it back to the target */
+        public void removeFromSolution(long element) {
+            this.subset.remove(element);
+            this.target += element;
+        }
+
+//        public void addSolution(ArrayList<Long> solution){
+//            this.solutions.add(solution);
+//        }
+
+        /* returns the solution set as a string*/
+        public String toString() {
+            return subset.toString();
+        }
+    }
+
 }
 
-/* object used to keep track of various algorithm values */
-class SubsetState {
-    /* main set that is being chosen from */
-    Long[] set;
-    /* target, changes as algorithm progresses */
-    long target;
-    /* solution set, as a list */
-    ArrayList<Long> subset;
-
-    /* initialize a new state */
-    public SubsetState(Long[] set, long target, ArrayList<Long> subset) {
-        this.set = set;
-        this.target = target;
-        this.subset = subset;
-    }
-
-    /* add the element to the solution set and subtract it from the target */
-    public void addToSolution(long element) {
-        this.subset.add(element);
-        this.target -= element;
-    }
-
-    /* remove the element from the solution set and add it back to the target */
-    public void removeFromSolution(long element) {
-        this.subset.remove(element);
-        this.target += element;
-    }
-
-    /* returns the solution set as a string*/
-    public String toString() {
-        return subset.toString();
-    }
-}

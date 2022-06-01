@@ -1,5 +1,7 @@
 package challenges;
 
+import challenges.misc.TargetSubset;
+
 public class App {
 
     public static void main(String[] args) {
@@ -19,7 +21,6 @@ public class App {
         /* Leetcode Hard */
 
         /* Other */
-//        TargetSubset.main();
-//        ComputingFactorial.main();
+        TargetSubset.main();
     }
 }

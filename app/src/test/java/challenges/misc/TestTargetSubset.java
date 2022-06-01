@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestTargetSubset {
     @Test
-    public void TestAlgorithmOutput() {
+    public void testAlgorithmOutput() {
         Assert.assertArrayEquals(new Long[]{2L, 3L},
                 new TargetSubset().recurse(new Long[]{2L, 3L, 4L}, 5).subset.toArray(Long[]::new));
         Assert.assertArrayEquals(new Long[]{},
@@ -15,7 +15,7 @@ public class TestTargetSubset {
 
 
     @Test
-    public void TestInputParsing() {
+    public void testInputParsing() {
         Assert.assertArrayEquals(new Long[]{2L, 3L, 4L}, TargetSubset.parseSet("2,3,4"));
     }
 }

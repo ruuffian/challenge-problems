@@ -1,5 +1,6 @@
 package challenges;
 
+import challenges.misc.FibonacciExamples;
 import challenges.misc.TargetSubset;
 
 public class App {
@@ -21,6 +22,7 @@ public class App {
         /* Leetcode Hard */
 
         /* Other */
-        TargetSubset.main();
+//        TargetSubset.main();
+        FibonacciExamples.main();
     }
 }

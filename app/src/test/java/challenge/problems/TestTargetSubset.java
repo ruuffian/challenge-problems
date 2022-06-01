@@ -1,5 +1,6 @@
 package challenge.problems;
 
+import challenges.misc.TargetSubset;
 import org.junit.Assert;
 import org.junit.Test;
 

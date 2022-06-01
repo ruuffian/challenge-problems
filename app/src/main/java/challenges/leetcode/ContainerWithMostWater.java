@@ -1,4 +1,4 @@
-package challenge.problems;
+package challenges.leetcode;
 
 public class ContainerWithMostWater {
     public static void main() {

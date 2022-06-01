@@ -1,4 +1,4 @@
-package challenge.problems;
+package challenges.misc;
 
 public class AddTwoNumbers {
     public static void main() {

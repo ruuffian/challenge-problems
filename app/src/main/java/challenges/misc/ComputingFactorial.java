@@ -1,4 +1,4 @@
-package challenge.problems;
+package challenges.misc;
 
 public class ComputingFactorial {
     public static void main(String[] args){

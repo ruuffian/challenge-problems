@@ -1,4 +1,4 @@
-package challenge.problems;
+package challenges.leetcode;
 
 public class RomanToInt {
     public static void main() {

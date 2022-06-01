@@ -1,10 +1,10 @@
 package challenges.leetcode;
 
-public class RomanToInt {
+public class RomanToInteger13 {
     public static void main() {
-        System.out.println(new RomanToInt().romanToInt("III"));
-        System.out.println(new RomanToInt().romanToInt("IV"));
-        System.out.println(new RomanToInt().romanToInt("IVCD"));
+        System.out.println(new RomanToInteger13().romanToInt("III"));
+        System.out.println(new RomanToInteger13().romanToInt("IV"));
+        System.out.println(new RomanToInteger13().romanToInt("IVCD"));
     }
 
     public int romanToInt(String s) {

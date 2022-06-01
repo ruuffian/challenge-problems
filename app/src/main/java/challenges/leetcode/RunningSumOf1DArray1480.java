@@ -2,9 +2,9 @@ package challenges.leetcode;
 
 import java.util.Arrays;
 
-public class RunningSumOf1DArray {
+public class RunningSumOf1DArray1480 {
     public static void main() {
-        System.out.println(Arrays.toString(new RunningSumOf1DArray().runningSum(new int[]{1, 2, 3, 4})));
+        System.out.println(Arrays.toString(new RunningSumOf1DArray1480().runningSum(new int[]{1, 2, 3, 4})));
     }
 
     public int[] runningSum(int[] nums) {

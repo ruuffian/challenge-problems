@@ -10,9 +10,9 @@ Notice that the solution set must not contain duplicate triplets.
 
 import java.util.*;
 
-public class ThreeSum {
+public class ThreeSum15 {
     public static void main() {
-        System.out.println(new ThreeSum().algorithmHashMapImplementation(new int[]{1, 2, -2, -1}).toString());
+        System.out.println(new ThreeSum15().algorithmHashMapImplementation(new int[]{1, 2, -2, -1}).toString());
     }
 
     public List<List<Integer>> algorithmHashMapImplementation(int[] nums) {

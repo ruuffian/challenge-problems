@@ -2,9 +2,9 @@ package challenges.leetcode;
 
 import java.util.HashMap;
 
-public class LengthOfLongestSubstring {
+public class LongestSubstringWIthoutRepeatingCharacters3 {
     public static void main() {
-        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring("abcabcabc"));
+        System.out.println(new LongestSubstringWIthoutRepeatingCharacters3().lengthOfLongestSubstring("abcabcabc"));
     }
 
     public int lengthOfLongestSubstring(String s) {

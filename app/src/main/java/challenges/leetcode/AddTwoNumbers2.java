@@ -1,10 +1,10 @@
-package challenges.misc;
+package challenges.leetcode;
 
-public class AddTwoNumbers {
+public class AddTwoNumbers2 {
     public static void main() {
         ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3, null)));
         ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4, null)));
-        System.out.println(new AddTwoNumbers().addTwoNumbers(l1, l2));
+        System.out.println(new AddTwoNumbers2().addTwoNumbers(l1, l2));
     }
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -44,22 +44,24 @@ public class AddTwoNumbers {
         }
         return head;
     }
+
+    static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
 }
 
 
-class ListNode {
-    int val;
-    ListNode next;
 
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}

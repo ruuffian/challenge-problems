@@ -1,9 +1,9 @@
 package challenges.leetcode;
 
-public class PalindromeNumber{
+public class PalindromeNumber9 {
     public static void main(){
-        System.out.println(new PalindromeNumber().isPalindrome(121));
-        System.out.println(new PalindromeNumber().isPalindrome(123));
+        System.out.println(new PalindromeNumber9().isPalindrome(121));
+        System.out.println(new PalindromeNumber9().isPalindrome(123));
 
     }
 

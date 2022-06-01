@@ -6,7 +6,8 @@ package challenge.problems;
 public class App {
 
     public static void main(String[] args) {
-        TargetSubset.main();
+//        TargetSubset.main();
 //        ContainerWithMostWater.main();
+        ThreeSum.main();
     }
 }

@@ -1,9 +1,5 @@
 package challenges;
 
-import challenges.leetcode.*;
-import challenges.misc.ComputingFactorial;
-import challenges.misc.TargetSubset;
-
 public class App {
 
     public static void main(String[] args) {

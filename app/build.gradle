@@ -27,7 +27,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'challenge.problems.ComputingFactorial'
+    mainClass = 'challenge.problems.App'
 }
 
 tasks.named('test') {

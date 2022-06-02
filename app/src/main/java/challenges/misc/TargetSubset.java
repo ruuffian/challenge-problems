@@ -98,6 +98,7 @@ public class TargetSubset {
         public void addToSolution(long element) {
             this.subset.add(element);
             this.target -= element;
+            this.subset.sort(Long::compare);
         }
 
         /* remove the element from the solution set and add it back to the target */

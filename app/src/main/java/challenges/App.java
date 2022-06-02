@@ -30,6 +30,6 @@ public class App {
         
         /* Other */
 //        TargetSubset.main();
-//        FibonacciExamples.main();
+        FibonacciExamples.main();
     }
 }

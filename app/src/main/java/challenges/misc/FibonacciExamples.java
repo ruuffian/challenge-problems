@@ -10,7 +10,7 @@ public class FibonacciExamples {
         System.out.println("Stress Tests for No Dynamic Programming Methods::\n");
         printMetrics(noDP, 0, 35, 5);
         /* Time Intensive */
-        printMetrics(noDP, 45, 49, 1);
+//        printMetrics(noDP, 45, 49, 1);
 
         /* Memoization Applied */
         FibMemo memoized = new FibMemo();
@@ -106,14 +106,13 @@ class FibMemo extends Fibonacci {
     @Override
     public BigInteger fib(int num) {
         if (num == 0 || num == 1) {
-            this.cache[num] = BigInteger.ONE;
             return BigInteger.ONE;
         }
         if (!this.cache[num].equals(BigInteger.ZERO)) {
             return this.cache[num];
         }
         this.cache[num] = fib(num - 1).add(fib((num - 2)));
-        return this.cache[num - 1];
+        return this.cache[num];
     }
 }
 
@@ -128,12 +127,14 @@ class FibBotUp extends Fibonacci {
 
     @Override
     public BigInteger fib(int num) {
-        BigInteger[] fib = new BigInteger[num];
+        if(num == 0 || num == 1)
+            return BigInteger.ONE;
+        BigInteger[] fib = new BigInteger[num + 1];
         fib[0] = BigInteger.ONE;
         fib[1] = BigInteger.ONE;
-        for (int i = 2; i < num - 1; i++) {
+        for (int i = 2; i <= num; i++) {
             fib[i] = fib[i - 1].add(fib[i - 2]);
         }
-        return fib[num - 1];
+        return fib[num];
     }
 }

@@ -10,7 +10,7 @@ public class FibonacciExamples {
         System.out.println("Stress Tests for No Dynamic Programming Methods::\n");
         printMetrics(noDP, 0, 35, 5);
         /* Time Intensive */
-//        printMetrics(noDP, 45, 49, 1);
+        printMetrics(noDP, 45, 49, 1);
 
         /* Memoization Applied */
         FibMemo memoized = new FibMemo();
@@ -38,12 +38,11 @@ public class FibonacciExamples {
             obj.metrics(i);
             System.out.println(obj);
         }
+        System.out.println();
     }
 }
 
 interface IFibonacci {
-    void metrics(int fibIndex);
-
     String toString();
 }
 
@@ -59,6 +58,14 @@ abstract class Fibonacci implements IFibonacci {
         return fib(num - 1).add(fib(num - 2));
     }
 
+    public void metrics(int fibIndex) {
+        this.fibIndex = fibIndex;
+        long startTime = System.currentTimeMillis();
+        fibVal = (fib(this.fibIndex));
+        long stopTime = System.currentTimeMillis();
+        this.totalTime = stopTime - startTime;
+    }
+
     public static String ordinal(int i) {
         String[] suffixes = new String[]{"th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th"};
         return switch (i % 100) {
@@ -68,32 +75,21 @@ abstract class Fibonacci implements IFibonacci {
     }
 
     public String toString() {
-        String expression;
-        expression = ""
-                .concat(ordinal(fibIndex) + " Fibonacci Number:: ").concat(String.valueOf(fibVal)).concat("\n")
-                .concat("Time to Complete:: ").concat(String.valueOf((int) (totalTime / 1000)))
-                .concat(".").concat(String.valueOf(totalTime % 1000)).concat(" Seconds");
-        return expression;
+        return ordinal(fibIndex) + " Fibonacci Number:: " + fibVal + ", Time to Complete:: " +
+                (int) (totalTime / 1000) + "." + totalTime % 1000 + " Seconds";
     }
 }
 
 class FibNoDP extends Fibonacci {
-
-    public void metrics(int fibIndex) {
-        this.fibIndex = fibIndex;
-        long startTime = System.currentTimeMillis();
-        fibVal = (new FibNoDP().fib(this.fibIndex));
-        long stopTime = System.currentTimeMillis();
-        this.totalTime = stopTime - startTime;
-    }
 }
 
 class FibMemo extends Fibonacci {
+    /* Array used to memoize algorithm */
     private BigInteger[] cache;
 
+    @Override
     public void metrics(int fibIndex) {
         this.fibIndex = fibIndex;
-        /* Array used to memoize algorithm */
         this.cache = Arrays.stream(new BigInteger[fibIndex + 1])
                 .map(x -> x = BigInteger.ZERO)
                 .toArray(BigInteger[]::new);
@@ -117,17 +113,10 @@ class FibMemo extends Fibonacci {
 }
 
 class FibBotUp extends Fibonacci {
-    public void metrics(int fibIndex) {
-        this.fibIndex = fibIndex;
-        long startTime = System.currentTimeMillis();
-        fibVal = (fib(this.fibIndex));
-        long stopTime = System.currentTimeMillis();
-        this.totalTime = stopTime - startTime;
-    }
 
     @Override
     public BigInteger fib(int num) {
-        if(num == 0 || num == 1)
+        if (num == 0 || num == 1)
             return BigInteger.ONE;
         BigInteger[] fib = new BigInteger[num + 1];
         fib[0] = BigInteger.ONE;

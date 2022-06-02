@@ -1,13 +1,12 @@
 package challenges.leetcode;
 
-import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class LongestPalindromicSubstring5 {
     public static void main() {
-        System.out.println(new LongestPalindromicSubstring5().radiiMethod("cbbd"));
+        System.out.println(new LongestPalindromicSubstring5().radiiMethod("ashjaskdbakshdjhbhjsdjasd"));
     }
 
     public String radiiMethod(String s) {
@@ -31,6 +30,7 @@ public class LongestPalindromicSubstring5 {
             radii[center] = radius;
             center++;
         }
+
         /* Retrieve max radius and the index of its center */
         final int max = Arrays.stream(radii)
                 .max().getAsInt();

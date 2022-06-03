@@ -3,6 +3,7 @@ package challenges;
 
 import challenges.leetcode.LongestPalindromicSubstring5;
 import challenges.leetcode.MedianOfTwoSortedArrays4;
+import challenges.leetcode.RangeSumQuery2D;
 import challenges.leetcode.TransposeMatrix867;
 import challenges.misc.FibonacciExamples;
 import challenges.misc.TargetSubset;
@@ -24,12 +25,13 @@ public class App {
 //        ThreeSum15.main();
 //        LongestSubstringWIthoutRepeatingCharacters3.main();
 //        LongestPalindromicSubstring5.main();
+        RangeSumQuery2D.main();
 
         /* Leetcode Hard */
 //        MedianOfTwoSortedArrays4.main();
-        
+
         /* Other */
 //        TargetSubset.main();
-        FibonacciExamples.main();
+//        FibonacciExamples.main();
     }
 }

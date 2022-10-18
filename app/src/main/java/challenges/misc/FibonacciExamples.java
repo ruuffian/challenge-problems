@@ -10,7 +10,7 @@ public class FibonacciExamples {
         System.out.println("Stress Tests for No Dynamic Programming Methods::\n");
         printMetrics(noDP, 0, 35, 5);
         /* Time Intensive */
-        printMetrics(noDP, 45, 49, 1);
+//        printMetrics(noDP, 45, 49, 1);
 
         /* Memoization Applied */
         FibMemo memoized = new FibMemo();
@@ -75,7 +75,7 @@ abstract class Fibonacci implements IFibonacci {
     }
 
     public String toString() {
-        return ordinal(fibIndex) + " Fibonacci Number:: " + fibVal + ", Time to Complete:: " +
+        return ordinal(fibIndex + 1) + " Fibonacci Number:: " + fibVal + ", Time to Complete:: " +
                 (int) (totalTime / 1000) + "." + totalTime % 1000 + " Seconds";
     }
 }
@@ -118,12 +118,14 @@ class FibBotUp extends Fibonacci {
     public BigInteger fib(int num) {
         if (num == 0 || num == 1)
             return BigInteger.ONE;
-        BigInteger[] fib = new BigInteger[num + 1];
-        fib[0] = BigInteger.ONE;
-        fib[1] = BigInteger.ONE;
+        BigInteger right = BigInteger.ONE;
+        BigInteger left = BigInteger.ONE;
+        BigInteger tmp;
         for (int i = 2; i <= num; i++) {
-            fib[i] = fib[i - 1].add(fib[i - 2]);
+            tmp = right;
+            right = left;
+            left = left.add(tmp);
         }
-        return fib[num];
+        return left;
     }
 }

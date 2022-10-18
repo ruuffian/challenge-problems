@@ -2,8 +2,7 @@ package challenges;
 
 
 import challenges.leetcode.*;
-import challenges.misc.FibonacciExamples;
-import challenges.misc.TargetSubset;
+import challenges.misc.*;
 
 public class App {
 
@@ -15,7 +14,7 @@ public class App {
 //        ValidParentheses20.main();
 //        RunningSumOf1DArray1480.main();
 //        TransposeMatrix867.main()
-        PowerOfTwo231.main();
+//        PowerOfTwo231.main();
 
         /* Leetcode Medium */
 //        AddTwoNumbers2.main();
@@ -31,5 +30,7 @@ public class App {
         /* Other */
 //        TargetSubset.main();
 //        FibonacciExamples.main();
+//        NumberOfDaysInAMonth.main();
+        DifferByOneDigit.main();
     }
 }
